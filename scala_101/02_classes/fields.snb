@@ -1,0 +1,123 @@
+{
+  "metadata" : {
+    "name" : "fields",
+    "user_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "auto_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "customLocalRepo" : null,
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "6B9FC98B94FF493C9EE84B6B847E937B"
+    },
+    "cell_type" : "markdown",
+    "source" : "# fields\nA field is a value encapsulated within an instance of a class."
+  }, {
+    "metadata" : {
+      "id" : "FD8F6861EC8A444ABC8599A660D79768"
+    },
+    "cell_type" : "markdown",
+    "source" : "## immutable fields\nImmutable fields cannot be changed."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "193F367C7B8D46FB9BF1DD917A563710"
+    },
+    "cell_type" : "code",
+    "source" : "class Hello0 {\n  val message: String = \"Hello hello hELLO\"\n}\n(new Hello0()).message",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Hello0\r\nres7: String = Hello hello hELLO\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "Hello hello hELLO"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 4,
+      "time" : "Took: 534 milliseconds, at 2018-4-3 13:21"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "775BF0CE72904FCCAFD8C6667A86268B"
+    },
+    "cell_type" : "markdown",
+    "source" : "## mutable fields\nUnlike immutable fields, mutables can be changed."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "02A42FF57E4349EFAB66FF4BE7365507"
+    },
+    "cell_type" : "code",
+    "source" : "class Hello1 {\n  var message: String = \"Hello1 is here\"\n}\nval hello1 = (new Hello1)\nprintln(hello1.message)\nhello1.message = \"goodbye for now\"\nprintln(hello1.message)",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Hello1 is here\ngoodbye for now\ndefined class Hello1\nhello1: Hello1 = Hello1@7d298116\nhello1.message: String = goodbye for now\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 7,
+      "time" : "Took: 484 milliseconds, at 2018-4-3 13:23"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "08813F10E8354D3C9FB641BB3C743C9C"
+    },
+    "cell_type" : "markdown",
+    "source" : "## immutable vs. mutable\nImmutable fields cannot be cahnged and are threadsafe.\n\nMutable fields require diligence to ensure multiple threads don't update the field simultaneously."
+  }, {
+    "metadata" : {
+      "id" : "CF02858E8E394476ACAD403202F6AF09"
+    },
+    "cell_type" : "markdown",
+    "source" : "## parameter promotion\nParameters passed to a constructor can be made publicly visible using the `val` keyword in front of it. The Scala compiler generates an accessor method when this occurs."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "96C2228B93F54A34800CD1248C4DBC6B"
+    },
+    "cell_type" : "code",
+    "source" : "class Hello2(val message: String)\nval hello2 = new Hello2(\"hi2\")\nhello2.message",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Hello2\r\nhello2: Hello2 = Hello2@61caaa54\r\nres15: String = hi2\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "hi2"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 8,
+      "time" : "Took: 505 milliseconds, at 2018-4-3 13:33"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "3FFD56CC4A7B4848A0983492362D3546"
+    },
+    "cell_type" : "markdown",
+    "source" : "# type inference\nAccording to [Scala](https://docs.scala-lang.org/style/types.html),\n\n\"Use type inference where possible, but put clarity first, and fouvr explicitness in public APIs. You should almost never annotate the type of a private field or local variable, as their type will usually be immediately evident in their value.\""
+  } ],
+  "nbformat" : 4
+}

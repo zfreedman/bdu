@@ -1,0 +1,191 @@
+{
+  "metadata" : {
+    "name" : "classes",
+    "user_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "auto_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "customLocalRepo" : null,
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "DEDAD4D3C90041E588E5C7EE383210CE"
+    },
+    "cell_type" : "markdown",
+    "source" : "# classes\nBelow is an instance of a class with a constructor that takes in a single String param called `message`. The constructor will invoke `println(message)` when a new instance of the class is created."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A4E0938EA6A446AF8D95D574E2BFEAEA"
+    },
+    "cell_type" : "code",
+    "source" : "class Hello(message: String) {\n  println(message)\n}",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Hello\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 5,
+      "time" : "Took: 553 milliseconds, at 2018-4-3 13:12"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "C4FF493B8C69400C99C9309EE59AC71C"
+    },
+    "cell_type" : "code",
+    "source" : "new Hello(\"goodbye world.\")",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "goodbye world.\nres7: Hello = Hello@615a4866\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "$line18.$read$$iw$$iw$Hello@615a4866"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 6,
+      "time" : "Took: 628 milliseconds, at 2018-4-3 13:13"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "C28923E133914229BAEDDDF161CE9B78"
+    },
+    "cell_type" : "markdown",
+    "source" : "Instantiating a class that requires constructor arguments **without** passing in such arguments will yield an error."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "252DD477F2EB46A18E585BB8489E4B82"
+    },
+    "cell_type" : "code",
+    "source" : "new Hello()",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "<console>:59: error: not enough arguments for constructor Hello: (message: String)Hello.\r\nUnspecified value parameter message.\r\n       new Hello()\r\n       ^\n"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "8EC3F165A2A54E798781C5A564979A8A"
+    },
+    "cell_type" : "markdown",
+    "source" : "## 0 parameter constructors\nClasses explicitly defining a constructor do not require parameters."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A4C113C1A6FD40B18360EA0331D90E42"
+    },
+    "cell_type" : "code",
+    "source" : "class Hello1 {\n  println(\"HI\")\n}",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Hello1\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 10,
+      "time" : "Took: 431 milliseconds, at 2018-4-3 13:16"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "EE67A4DBA09A41A98015739BBEFD2E00"
+    },
+    "cell_type" : "code",
+    "source" : "new Hello1()",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "HI\nres15: Hello1 = Hello1@27a9a21b\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "$line28.$read$$iw$$iw$Hello1@27a9a21b"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 11,
+      "time" : "Took: 534 milliseconds, at 2018-4-3 13:16"
+    } ]
+  }, {
+    "metadata" : {
+      "id" : "32A8E323DD26446F8E188B063C16F4BC"
+    },
+    "cell_type" : "markdown",
+    "source" : "Furthermore, classes do not need to specify a constructor at all."
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "ADC28B7893684A7EBA995D3056E838EB"
+    },
+    "cell_type" : "code",
+    "source" : "class Hello2",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "defined class Hello2\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 12,
+      "time" : "Took: 428 milliseconds, at 2018-4-3 13:16"
+    } ]
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "A38868246E3143748CEF694FDEBFC675"
+    },
+    "cell_type" : "code",
+    "source" : "new Hello2()",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "res18: Hello2 = Hello2@217744b6\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : "$line32.$read$$iw$$iw$Hello2@217744b6"
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 13,
+      "time" : "Took: 526 milliseconds, at 2018-4-3 13:16"
+    } ]
+  } ],
+  "nbformat" : 4
+}

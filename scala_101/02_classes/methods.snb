@@ -1,0 +1,49 @@
+{
+  "metadata" : {
+    "name" : "methods",
+    "user_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "auto_save_timestamp" : "1969-12-31T16:00:00.000Z",
+    "language_info" : {
+      "name" : "scala",
+      "file_extension" : "scala",
+      "codemirror_mode" : "text/x-scala"
+    },
+    "trusted" : true,
+    "customLocalRepo" : null,
+    "customRepos" : null,
+    "customDeps" : null,
+    "customImports" : null,
+    "customArgs" : null,
+    "customSparkConf" : null
+  },
+  "cells" : [ {
+    "metadata" : {
+      "id" : "78CCC685E75E453BA14DFDC79F47F956"
+    },
+    "cell_type" : "markdown",
+    "source" : "# methods\n## simple method"
+  }, {
+    "metadata" : {
+      "trusted" : true,
+      "input_collapsed" : false,
+      "collapsed" : false,
+      "id" : "B786229878A8458D8E4453B8B879BF57"
+    },
+    "cell_type" : "code",
+    "source" : "// using type inference\ndef hello = \"Hello\"\nprintln(hello)\n\n// 1 parameter, specific typing\ndef echo(msg: String): String = \"123\" + msg\nprintln(echo(\"hi there\"))",
+    "outputs" : [ {
+      "name" : "stdout",
+      "output_type" : "stream",
+      "text" : "Hello\n123hi there\nhello: String\necho: (msg: String)String\n"
+    }, {
+      "metadata" : { },
+      "data" : {
+        "text/html" : ""
+      },
+      "output_type" : "execute_result",
+      "execution_count" : 9,
+      "time" : "Took: 717 milliseconds, at 2018-4-3 13:38"
+    } ]
+  } ],
+  "nbformat" : 4
+}
